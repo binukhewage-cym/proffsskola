@@ -671,7 +671,7 @@ export const pages: Record<string, Page> = {
     ],
   },
   teori: {
-    title: 'Körkortsteori i Järfälla & Jakobsberg',
+    title: 'Körkortsteori på olika språk i Järfälla & Jakobsberg',
     heading: 'Körkortsteori på flera språk\ni Järfälla & Jakobsberg',
     intro: 'Träna på körkortsteorin digitalt på svenska, engelska eller flera andra språk, och komplettera med stöd från våra lärare när du behöver struktur.',
     image: 'teori',

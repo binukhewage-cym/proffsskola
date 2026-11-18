@@ -3,8 +3,11 @@ import { business, courses, faqs } from './data';
 
 export function metadata(title: string, description: string, path = ''): Metadata {
   const url = `${business.url}${path}`;
+  // The layout appends " | Proffs Trafikskola" (21 chars). Skip it when the result would pass
+  // Google's ~60-character limit, so long keyword titles are not cut off in search results.
+  const suffix = ' | Proffs Trafikskola';
   return {
-    title,
+    title: title.length + suffix.length > 60 ? { absolute: title } : title,
     description,
     applicationName: business.name,
     authors: [{ name: business.name, url: business.url }],
