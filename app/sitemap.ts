@@ -5,7 +5,7 @@ export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return ['', ...Object.keys(pages)].map((slug) => ({
-    url: `${business.url}${slug ? '/' + slug : ''}`,
+    url: `${business.url}/${slug ? slug + '/' : ''}`,
     changeFrequency: ['priser', 'kurser', 'korlektioner', 'intensivkurs', 'paket', 'teori'].includes(slug)
       ? 'weekly'
       : 'monthly',

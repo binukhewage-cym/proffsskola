@@ -286,7 +286,7 @@ export function CoursesOverviewContent() {
 }
 export function ContactContent() {
   const mapEmbed =
-    'https://www.google.com/maps?cid=7373633510116988312&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en-US&source=embed&output=embed';
+    `https://www.google.com/maps?cid=${business.mapsCid}&hl=sv&output=embed`;
   return (
     <section className="container section contact-grid">
       <div>
@@ -421,7 +421,11 @@ export function SpecialContent({ slug }: { slug: string }) {
     case 'vagen-till-korkort':
       return (
         <>
-          <section className="container section">
+          <section className="container section" aria-labelledby="vagen-steps-title">
+            <div className="section-heading">
+              <span className="eyebrow">Steg för steg</span>
+              <h2 id="vagen-steps-title">Sex steg till ditt B-körkort</h2>
+            </div>
             <Timeline full />
           </section>
           <FAQ />

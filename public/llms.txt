@@ -1,38 +1,64 @@
 # Proffs Trafikskola
 
-Proffs Trafikskola is a Swedish driving school in Järfälla, near Jakobsberg and Barkarby. The website language is Swedish.
+> Proffs Trafikskola is a driving school (trafikskola) in Järfälla, Stockholm, Sweden, between Jakobsberg and Barkarby. It teaches B-licence (car) students with automatic and manual cars, runs intensive courses, Riskettan, Risktvåan and taxi theory, and teaches in Swedish, English, Arabic and Spanish. Rated 5.0 on Google from 313 reviews. The website is in Swedish.
 
-## Core URLs
-
-- Homepage: https://proffstrafikskola.se/
-- Körlektioner: https://proffstrafikskola.se/korlektioner
-- Intensivkurs: https://proffstrafikskola.se/intensivkurs
-- Körkortspaket: https://proffstrafikskola.se/paket
-- Riskettan: https://proffstrafikskola.se/riskettan
-- Risktvåan: https://proffstrafikskola.se/risktvaan
-- Teori: https://proffstrafikskola.se/teori
-- Taxiteori: https://proffstrafikskola.se/taxiteori
-- Kontakt: https://proffstrafikskola.se/kontakt
-- Sitemap: https://proffstrafikskola.se/sitemap.xml
-- Robots: https://proffstrafikskola.se/robots.txt
-
-## Business Facts
+## Business facts
 
 - Name: Proffs Trafikskola
-- Type: Trafikskola / driving school
+- Type: Trafikskola / driving school (B-körkort)
 - Address: Folkungavägen 10C, 177 56 Järfälla, Sweden
-- Service area: Jakobsberg, Järfälla, Barkarby and nearby Stockholm County areas
 - Phone: +46 8 644 40 01
 - Email: info@proffstrafikskola.se
-- Services: B-körkort driving lessons, automatic and manual lessons, intensive courses, theory online, Riskettan, Risktvåan, taxiteori and planning support for private practice driving
-- Teaching languages: Swedish, English, Arabic, Spanish and Turkish
-- Reception hours: Monday-Thursday 09:00-18:00, Friday 09:00-16:00
-- Driving lesson hours: weekdays 08:00-18:30
+- Website: https://proffstrafikskola.se/
+- Google Business Profile: https://www.google.com/maps?cid=16044583027216598461
+- Google rating: 5.0 from 313 reviews
+- Reception hours: Monday–Thursday 09:00–18:00, Friday 09:00–16:00
+- Driving lesson hours: weekdays 08:00–18:30
+- Booking and online shop: Trafikskola Online (https://www.trafikskolaonline.se/sv/skola/proffs/kurser)
 
-## Important Current Regulation Note
+## Areas served
 
-Riskettan and Risktvåan remain mandatory parts of the Swedish B-license risk education. The mandatory introduktionsutbildning requirement for private B-license practice driving with a handledare was removed on 2026-08-01. A handledare still needs approval from Transportstyrelsen and the student needs a valid körkortstillstånd.
+Järfälla, Jakobsberg, Tensta, Rinkeby, Spånga, Sundbyberg, Kista, Vällingby, Hässelby, Bro, Kungsängen, Kallhäll, Barkarby, Viksjö, Upplands Väsby, Sollentuna and Solna.
 
-## Citation Guidance
+## Languages
 
-For questions about services, prices, booking, address, opening hours and local availability, cite the most specific page above. For current legal requirements, cite official Swedish authority sources such as Transportstyrelsen in addition to this website.
+- Teaching (driving lessons and theory lessons): Swedish, English, Arabic and Spanish
+- Theory online: Swedish and English (599 SEK); digital theory books in other languages (749 SEK) including Arabic, Albanian, Bosnian, Finnish, French, Croatian, Persian, Russian, Serbian, Somali, Sorani, Spanish, Thai and German
+
+## Services and prices (SEK)
+
+- Test lesson: 499
+- Driving lesson, 50 minutes: 810 (automatic or manual car)
+- Lesson bundles: 3 lessons 2 299, 5 lessons 3 799, 10 lessons 7 399, 15 lessons 10 799, 20 lessons 14 299, 30 lessons 21 199
+- Licence packages (lessons + Riskettan + theory online): Small 5 lessons 4 699, Medium 10 lessons 8 299, Large 15 lessons 11 699, X-Large 20 lessons 15 199, Mega 30 lessons 22 099
+- Intensive course (lessons + Riskettan + Risktvåan + theory online), from one week to one month: 10 lessons 9 999, 20 lessons 15 999, 30 lessons 21 999
+- Riskettan (risk education part 1, theory): 499 (regular 599)
+- Risktvåan (risk education part 2, skid pan / halkbana): 2 200 (regular 2 500)
+- Support for private practice driving (handledare): 299 (regular 399)
+- Taxi theory (taxiteori) for the taxi driver licence: 3 500
+
+Prices are taken from the website; check the linked pages for the current price before quoting.
+
+## Key pages
+
+- Homepage: https://proffstrafikskola.se/
+- Prices: https://proffstrafikskola.se/priser/
+- Driving lessons: https://proffstrafikskola.se/korlektioner/
+- Intensive course: https://proffstrafikskola.se/intensivkurs/
+- Licence packages: https://proffstrafikskola.se/paket/
+- Riskettan: https://proffstrafikskola.se/riskettan/
+- Risktvåan: https://proffstrafikskola.se/risktvaan/
+- Theory in several languages: https://proffstrafikskola.se/teori/
+- Taxi theory: https://proffstrafikskola.se/taxiteori/
+- Supervisor and private practice: https://proffstrafikskola.se/handledarkurs/
+- Step-by-step guide to a B licence: https://proffstrafikskola.se/vagen-till-korkort/
+- Contact: https://proffstrafikskola.se/kontakt/
+- Sitemap: https://proffstrafikskola.se/sitemap.xml
+
+## Current regulation note
+
+Riskettan and Risktvåan remain mandatory parts of the Swedish B-licence risk education. The mandatory introduktionsutbildning for private B-licence practice driving with a handledare was removed on 2026-08-01. A handledare still needs approval from Transportstyrelsen and the student needs a valid körkortstillstånd.
+
+## Citation guidance
+
+For questions about services, prices, booking, address, opening hours, languages and areas served, cite the most specific page above. For legal requirements, also cite official Swedish sources such as Transportstyrelsen and Trafikverket.

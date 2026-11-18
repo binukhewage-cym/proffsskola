@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import Script from 'next/script';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import Motion from '@/components/motion';
@@ -20,7 +21,7 @@ const body = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL(business.url),
   title: {
-    default: 'Proffs Trafikskola i Jakobsberg, Järfälla & Barkarby',
+    default: 'Proffs Trafikskola i Järfälla & Jakobsberg',
     template: '%s | Proffs Trafikskola',
   },
   description:
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
     locale: 'sv_SE',
     url: business.url,
     siteName: business.name,
-    title: 'Proffs Trafikskola i Jakobsberg, Järfälla & Barkarby',
+    title: 'Proffs Trafikskola i Järfälla & Jakobsberg',
     description:
       'Körlektioner, intensivkurser, teori och riskutbildning för B-körkort i Järfälla.',
     images: [
@@ -54,21 +55,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Proffs Trafikskola i Jakobsberg, Järfälla & Barkarby',
+    title: 'Proffs Trafikskola i Järfälla & Jakobsberg',
     description:
       'Körlektioner, intensivkurser, teori och riskutbildning för B-körkort i Järfälla.',
     images: ['/images/proffs-car.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-      'max-video-preview': -1,
-    },
   },
 };
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -96,6 +86,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             },
           ]}
         />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-WHY4TF6M8X"
+          strategy="lazyOnload"
+        />
+        <Script id="google-analytics" strategy="lazyOnload">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-WHY4TF6M8X');
+          `}
+        </Script>
       </body>
     </html>
   );

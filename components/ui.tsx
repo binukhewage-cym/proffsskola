@@ -41,8 +41,63 @@ export function Photo({
   const p = photos[name];
   return (
     <div className={`photo ${className}`}>
-      <Image {...p} sizes={sizes} priority={priority} />
+      <Image
+        {...p}
+        sizes={sizes}
+        loading={priority ? 'eager' : 'lazy'}
+        fetchPriority={priority ? 'high' : 'auto'}
+      />
     </div>
+  );
+}
+export function AreaChips() {
+  return (
+    <ul className="area-chips" aria-label="Områden vi kör i">
+      {business.serviceAreas.map((area, i) => (
+        <li key={area} className={i < 2 ? 'area-chip-home' : undefined}>
+          {i < 2 && <MapPin size={14} weight="fill" aria-hidden="true" />}
+          {area}
+        </li>
+      ))}
+    </ul>
+  );
+}
+export function ServiceAreas() {
+  return (
+    <section className="service-areas" aria-labelledby="service-areas-title">
+      <div className="container">
+        <div className="service-areas-card" data-reveal>
+          <div className="service-areas-copy">
+            <span className="service-areas-badge">Här kör vi</span>
+            <h2 id="service-areas-title">Körlektioner i Järfälla, Jakobsberg och nordvästra Stockholm</h2>
+            <p>
+              Proffs Trafikskola är en trafikskola i Järfälla. Vi utgår från {business.street}, mellan
+              Jakobsberg och Barkarby, och kör med elever i hela närområdet.
+            </p>
+            <p>
+              Söker du en trafikskola i Jakobsberg ligger vi nära dig. Oavsett om du bor i Jakobsberg,
+              Kista eller Sollentuna kan du ta körlektioner, gå intensivkurs, läsa körkortsteori och gå
+              Riskettan och Risktvåan hos oss.
+            </p>
+            <ul className="service-areas-links" aria-label="Utbildningar i Järfälla och Jakobsberg">
+              <li><Link href="/intensivkurs/">Intensivkurs i Järfälla</Link></li>
+              <li><Link href="/korlektioner/">Körlektioner i Järfälla</Link></li>
+              <li><Link href="/riskettan/">Riskettan i Järfälla</Link></li>
+              <li><Link href="/risktvaan/">Risktvåan i Järfälla</Link></li>
+              <li><Link href="/teori/">Körkortsteori på flera språk</Link></li>
+            </ul>
+            <div className="button-group">
+              <Button href="/kontakt">Kontakta oss</Button>
+              <TextLink href="/priser">Se priser</TextLink>
+            </div>
+          </div>
+          <div className="service-areas-list">
+            <h3>Områden vi kör i</h3>
+            <AreaChips />
+          </div>
+        </div>
+      </div>
+    </section>
   );
 }
 export function TextLink({ href, children }: { href: string; children: React.ReactNode }) {
@@ -179,7 +234,7 @@ export function TrustStrip() {
 }
 export function Location() {
   const mapEmbed =
-    'https://www.google.com/maps?cid=7373633510116988312&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=en-US&source=embed&output=embed';
+    `https://www.google.com/maps?cid=${business.mapsCid}&hl=sv&output=embed`;
   return (
     <section className="container section location" data-reveal>
       <div className="location-map">

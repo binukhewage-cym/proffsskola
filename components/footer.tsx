@@ -13,6 +13,7 @@ export default function Footer() {
               alt="Proffs Trafikskola"
               width={252}
               height={84}
+              loading="eager"
             />
           </Link>
           <p>
@@ -68,6 +69,7 @@ export default function Footer() {
       </div>
       <div className="container footer-bottom">
         <span>© {new Date().getFullYear()} Proffs Trafikskola</span>
+        <a href="https://cyoumedia.com">Powered by CYouMedia</a>
         <span>Jakobsberg · Järfälla · Barkarby</span>
       </div>
     </footer>

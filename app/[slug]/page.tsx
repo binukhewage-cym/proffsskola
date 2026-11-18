@@ -90,7 +90,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               alt={illustrations[p.image as keyof typeof illustrations].alt}
               width={illustrations[p.image as keyof typeof illustrations].width}
               height={illustrations[p.image as keyof typeof illustrations].height}
-              priority
+              loading="eager"
+              fetchPriority="high"
               className="hero-illustration"
               sizes="(max-width: 767px) 100vw, (max-width: 1200px) 50vw, 600px"
             />
@@ -277,7 +278,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               </p>
               <p>
                 Våra pedagoger har lång erfarenhet och kan ge stöd på svenska, engelska,
-                arabiska, turkiska och spanska, så att du kan känna dig trygg och bekväm.
+                arabiska och spanska, så att du kan känna dig trygg och bekväm.
               </p>
               <p className="info-lead">Viktig information inför kursen:</p>
               <ul>

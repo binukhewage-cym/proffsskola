@@ -493,7 +493,15 @@ p + a {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  pointer-events: none;
   background: #d9d9d0;
+}
+.school-hero-video::-webkit-media-controls,
+.school-hero-video::-webkit-media-controls-panel,
+.school-hero-video::-webkit-media-controls-overlay-play-button,
+.school-hero-video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
 }
 .school-hero-content { position: relative; z-index: 1; flex: 1; min-height: 0; display: flex; align-items: center; justify-content: flex-start; padding-block: 72px 56px; text-align: left; }
 .school-hero-copy {
@@ -1398,6 +1406,319 @@ p + a {
     linear-gradient(135deg, rgba(243,201,35,.16), transparent 42%),
     #f1f4f1;
 }
+/* Google reviews strip */
+.g-reviews {
+  padding-top: 92px;
+  background: #fff;
+  color: #161916;
+  overflow: hidden;
+}
+.g-reviews-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+.g-reviews-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
+  padding: 7px 13px 7px 9px;
+  border: 1px solid #e1ded5;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 750;
+}
+.g-reviews h2 {
+  font-size: 40px;
+  line-height: 1.12;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+.g-reviews-score {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 22px;
+}
+.g-reviews-score strong {
+  font-size: 54px;
+  line-height: 1;
+  font-weight: 650;
+}
+.g-reviews-score span:not(.g-stars) {
+  display: block;
+  margin-top: 6px;
+  color: #555b54;
+  font-size: 14px;
+}
+.g-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #fbbc04;
+}
+.g-reviews-button {
+  flex-shrink: 0;
+  gap: 12px;
+  background: #f3c923;
+  color: #161916;
+  letter-spacing: 0;
+}
+.g-reviews-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}
+.g-reviews-track {
+  display: flex;
+  width: max-content;
+  animation: g-reviews-scroll 48s linear infinite;
+}
+.g-reviews-marquee:hover .g-reviews-track,
+.g-reviews-marquee:focus-within .g-reviews-track {
+  animation-play-state: paused;
+}
+.g-reviews-list {
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0 18px 0 0;
+  list-style: none;
+}
+@keyframes g-reviews-scroll {
+  to { transform: translateX(-50%); }
+}
+.g-review {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+  padding: 26px;
+  border: 1px solid #e1ded5;
+  border-radius: 20px;
+  background: #F7F6F2;
+}
+.g-review-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.g-review p {
+  flex: 1;
+  margin-top: 16px;
+  color: #3f453f;
+  font-size: 14px;
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.g-review-author {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 14px;
+  font-weight: 650;
+}
+.g-review-avatar {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #f3c923;
+  font-size: 14px;
+  font-weight: 750;
+}
+@media (prefers-reduced-motion: reduce) {
+  .g-reviews-track {
+    animation: none;
+  }
+  .g-reviews-marquee {
+    overflow-x: auto;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .g-reviews-list[aria-hidden='true'] {
+    display: none;
+  }
+}
+@media (max-width: 1023px) {
+  .g-reviews-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+@media (max-width: 767px) {
+  .g-reviews {
+    padding-top: 58px;
+  }
+  .g-reviews-head {
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+  .g-reviews h2 {
+    font-size: 28px;
+  }
+  .g-reviews-score strong {
+    font-size: 44px;
+  }
+  .g-reviews-button {
+    width: 100%;
+  }
+  .g-review {
+    width: 290px;
+    padding: 22px;
+  }
+  .g-reviews-list {
+    gap: 14px;
+    padding-right: 14px;
+  }
+}
+/* Driving areas ("Här kör vi") */
+.service-areas {
+  padding-bottom: 92px;
+  background: #fff;
+  color: #161916;
+}
+.service-areas-card {
+  display: grid;
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: 56px;
+  align-items: center;
+  padding: 48px;
+  border: 1px solid #e1ded5;
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(243,201,35,.16), transparent 42%),
+    #F7F6F2;
+}
+.service-areas-badge {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 18px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #f3c923;
+  color: #161916;
+  font-size: 12px;
+  font-weight: 750;
+}
+.service-areas h2 {
+  max-width: 560px;
+  font-size: 38px;
+  line-height: 1.12;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+.service-areas p {
+  color: #555b54;
+  font-size: 15px;
+  line-height: 1.78;
+}
+.service-areas h2 + p {
+  margin-top: 22px;
+}
+.service-areas p + p {
+  margin-top: 14px;
+}
+.service-areas-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.service-areas-links a {
+  color: #161916;
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: underline;
+  text-decoration-color: #f3c923;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.service-areas-links a:hover {
+  text-decoration-color: currentColor;
+}
+.service-areas .button-group {
+  margin-top: 30px;
+}
+.service-areas-list {
+  padding: 30px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.72);
+  border: 1px solid #e9e6dd;
+}
+.service-areas-list h3 {
+  margin-bottom: 18px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #555b54;
+}
+.area-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.area-chips li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border: 1px solid #e1ded5;
+  border-radius: 999px;
+  background: #fff;
+  color: #161916;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.2;
+}
+.area-chips li.area-chip-home {
+  font-weight: 750;
+}
+@media (max-width: 1023px) {
+  .service-areas-card {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding: 36px;
+  }
+}
+@media (max-width: 767px) {
+  .service-areas {
+    padding-bottom: 58px;
+  }
+  .service-areas-card {
+    gap: 26px;
+    padding: 24px;
+    border-radius: 20px;
+  }
+  .service-areas h2 {
+    font-size: 28px;
+  }
+  .service-areas p {
+    font-size: 14px;
+  }
+  .service-areas-list {
+    padding: 20px;
+    border-radius: 16px;
+  }
+  .area-chips li {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+}
 .course-depth {
   padding-block: 92px;
   background: #F7F6F2;
@@ -1910,13 +2231,21 @@ address {
   min-height: 34px;
 }
 .footer-bottom {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
   border-top: 1px solid var(--line);
   padding-block: 25px;
   margin-top: 55px;
   font-size: 11px;
   color: var(--muted);
+}
+.footer-bottom > :last-child {
+  text-align: right;
+}
+.footer-bottom a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .breadcrumbs {
   display: flex;
@@ -2676,8 +3005,7 @@ address {
   .intensive-package:nth-child(3) {
     animation-delay: .16s;
   }
-  .hero-signature,
-  .inner-hero-illustration {
+  .hero-signature {
     animation: image-enter 1.15s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
   .revealed {
@@ -3660,10 +3988,19 @@ address {
   }
   .footer-bottom {
     font-size: 10px;
+    display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 8px;
     margin-top: 35px;
     padding-block: 20px;
+  }
+  .footer-bottom > :last-child {
+    order: 1;
+    text-align: center;
+  }
+  .footer-bottom a {
+    order: 2;
   }
   .breadcrumbs {
     padding-top: calc(var(--floating-header-space) + 34px);

@@ -1,41 +1,67 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
-
-const mobileQuery = '(max-width: 767px)';
+import { useEffect, useRef } from "react";
 
 export default function SchoolHeroVideo() {
-  const video = useRef<HTMLVideoElement>(null);
-  const [src, setSrc] = useState<string | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const media = window.matchMedia(mobileQuery);
-    const selectSource = () => {
-      setSrc(media.matches ? '/mobile.mp4' : '/carvid.mp4');
+    const video = videoRef.current;
+    if (!video) return;
+
+    video.muted = true;
+    video.defaultMuted = true;
+    video.playsInline = true;
+
+    const startPlayback = () => {
+      if (video.paused && !video.ended) void video.play().catch(() => undefined);
+    };
+    const resumeWhenVisible = () => {
+      if (document.visibilityState === "visible") startPlayback();
     };
 
-    selectSource();
-    media.addEventListener('change', selectSource);
+    startPlayback();
+    video.addEventListener("loadeddata", startPlayback);
+    video.addEventListener("canplay", startPlayback);
+    window.addEventListener("pageshow", startPlayback);
+    document.addEventListener("visibilitychange", resumeWhenVisible);
+    document.addEventListener("pointerdown", startPlayback, {
+      once: true,
+      passive: true,
+    });
 
-    return () => media.removeEventListener('change', selectSource);
+    return () => {
+      video.removeEventListener("loadeddata", startPlayback);
+      video.removeEventListener("canplay", startPlayback);
+      window.removeEventListener("pageshow", startPlayback);
+      document.removeEventListener("visibilitychange", resumeWhenVisible);
+      document.removeEventListener("pointerdown", startPlayback);
+    };
   }, []);
-
-  useEffect(() => {
-    if (!src || !video.current) return;
-    video.current.load();
-    void video.current.play();
-  }, [src]);
 
   return (
     <video
-      ref={video}
+      ref={videoRef}
       className="school-hero-video"
       autoPlay
       muted
       playsInline
+      controls={false}
+      disablePictureInPicture
+      disableRemotePlayback
+      preload="auto"
       aria-hidden="true"
     >
-      {src && <source src={src} type="video/mp4" />}
+      <source
+        src="/hero-mobile-v2.mp4"
+        type="video/mp4"
+        media="(max-width: 767px)"
+      />
+      <source
+        src="/hero-desktop.mp4"
+        type="video/mp4"
+        media="(min-width: 768px)"
+      />
     </video>
   );
 }

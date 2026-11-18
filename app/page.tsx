@@ -15,15 +15,17 @@ import {
   FAQ,
   Location,
   BookingCTA,
+  ServiceAreas,
 } from '@/components/ui';
 import SchoolHeroVideo from '@/components/school-hero-video';
+import GoogleReviews from '@/components/google-reviews';
 import Schema from '@/components/schema';
 import { metadata, faqSchema } from '@/lib/seo';
 import { business } from '@/lib/data';
 export const generateMetadata = () =>
   metadata(
-    'Trafikskola i Jakobsberg, Järfälla & Barkarby',
-    'Proffs Trafikskola i Järfälla erbjuder körlektioner med automat och manuell bil, intensivkurser, teori, Riskettan, Risktvåan och taxiteori nära Jakobsberg och Barkarby.',
+    'Trafikskola i Järfälla & Jakobsberg | Proffs Trafikskola',
+    'Proffs Trafikskola i Järfälla: körlektioner med automat och manuell bil, intensivkurs, teori på flera språk, Riskettan och Risktvåan nära Jakobsberg.',
   );
 export default function Home() {
   return (
@@ -33,10 +35,10 @@ export default function Home() {
         <div className="container school-hero-content">
             <div className="school-hero-copy">
               <h1 id="school-hero-title">
-                Välkommen till<br />
-                <span>Proffs</span><br />Trafikskola.
+                Trafikskola i<br />
+                <span>Järfälla</span> &amp;<br />Jakobsberg.
               </h1>
-              <p className="school-hero-intro">En pålitlig trafikskola med bra priser.<br />I Jakobsberg, Järfälla & Barkarby.</p>
+              <p className="school-hero-intro">Välkommen till Proffs Trafikskola.<br />En pålitlig trafikskola i Järfälla med bra priser.</p>
               <a className="school-hero-phone" href={`tel:${business.tel}`}>
                 <Phone size={21} />
                 <span>Prata med oss<strong>{business.phone}</strong></span>
@@ -86,13 +88,13 @@ export default function Home() {
           </div>
           <div className="school-why-gallery">
             <div className="school-why-photo school-why-photo-main">
-              <Image src="/images/storefront.jpg" alt="Entrén till Proffs Trafikskola med skolans skylt och trafikmärken i fönstret" fill sizes="(max-width: 767px) 90vw, 38vw" />
+              <Image src="/images/storefront-optimized.webp" alt="Entrén till Proffs Trafikskola med skolans skylt och trafikmärken i fönstret" fill sizes="(max-width: 767px) 90vw, 38vw" />
             </div>
             <div className="school-why-photo">
-              <Image src="/images/school.jpg" alt="Välkomsthörnan inne på Proffs Trafikskola" fill sizes="(max-width: 767px) 44vw, 20vw" />
+              <Image src="/images/school-optimized.webp" alt="Välkomsthörnan inne på Proffs Trafikskola" fill sizes="(max-width: 767px) 44vw, 20vw" />
             </div>
             <div className="school-why-photo">
-              <Image src="/images/classroom.jpg" alt="Skolans klassrum med röda stolar och utrustning för teoriundervisning" fill sizes="(max-width: 767px) 44vw, 20vw" />
+              <Image src="/images/classroom-optimized.webp" alt="Skolans klassrum med röda stolar och utrustning för teoriundervisning" fill sizes="(max-width: 767px) 44vw, 20vw" />
             </div>
           </div>
         </div>
@@ -105,7 +107,7 @@ export default function Home() {
               { title: 'Kurser', icon: RoadHorizon, items: ['Stöd vid privat övningskörning', 'Riskettan B', 'Risktvåan (Halkbana)'], href: '/kurserpris' },
               { title: 'Körlektioner', icon: SteeringWheel, items: ['Testlektion 50 min', '1 körlektion 50 min', '5 körlektioner', '10 körlektioner', '15 körlektioner', '20 körlektioner', '30 körlektioner'], href: '/korlektioner' },
               { title: 'Teori Online', icon: BookOpen, items: ['Körkortsteori bok', 'Teorifrågor på nätet', 'Taxiteori – 3 500 kr'], href: '/teori' },
-              { title: 'Språk', icon: Translate, items: ['Svenska', 'Engelska', 'Arabiska', 'Spanska', 'Turkiska'], href: null },
+              { title: 'Språk', icon: Translate, items: ['Svenska', 'Engelska', 'Arabiska', 'Spanska'], href: null },
             ].map(({ title, icon: Icon, items, href }) => (
               <div className="school-service" key={title}>
                 <Icon size={30} className="school-service-icon" aria-hidden="true" />
@@ -180,13 +182,14 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <GoogleReviews />
       <section className="school-intro" aria-labelledby="school-intro-title">
         <div className="container school-intro-grid">
           <article className="school-intro-lead">
             <h2 id="school-intro-title">Proffs Trafikskola i Jakobsberg, Järfälla & Barkarby</h2>
             <p>Välkommen till Proffs Trafikskola, belägen i Järfälla mellan Jakobsberg och Barkarby. Vi erbjuder ett brett utbud av körutbildningar, från enstaka körlektioner till intensivkurser och körprov.</p>
             <p>Våra erfarna lärare har hjälpt många elever att köra bil, och vi tror att alla har potential att lyckas ta körkort med rätt pedagogiskt stöd. Vårt mål är att vara just det stödet, och att guida våra elever hela vägen till deras körkort.</p>
-            <p>Vi erbjuder undervisning på svenska, engelska, spanska, arabiska och turkiska, samt tillhandahåller teoriböcker på flera språk. Detta ökar tillgängligheten och underlättar för alla som vill ta körkort hos oss.</p>
+            <p>Vi erbjuder undervisning på svenska, engelska, spanska och arabiska, samt tillhandahåller teoriböcker på flera språk. Detta ökar tillgängligheten och underlättar för alla som vill ta körkort hos oss.</p>
           </article>
           <div className="school-intro-photo">
             <Image src="/images/driving.jpg" alt="Elev kör bil under en körlektion med fokus på trygg körning" fill sizes="(max-width: 767px) 100vw, 44vw" />
@@ -207,6 +210,7 @@ export default function Home() {
           </article>
         </div>
       </section>
+      <ServiceAreas />
       <FAQ />
       <section className="course-depth" aria-labelledby="course-depth-title">
         <div className="container course-depth-layout">
@@ -253,11 +257,11 @@ export default function Home() {
             <div className="school-info-note-grid">
               <article>
                 <h3>Vår trafikskola undervisar på ett flertal språk</h3>
-                <p>Våra pedagoger erbjuder undervisning på svenska, engelska, arabiska, spanska och turkiska, både för körlektioner och teorilektioner.</p>
-                <p>För privat övningskörning med personbil krävs inte längre introduktionsutbildning från och med 1 augusti 2026. Handledaren måste fortfarande vara godkänd av Transportstyrelsen och eleven behöver körkortstillstånd. Vi hjälper gärna elev och handledare att planera körningen på svenska, engelska, arabiska, spanska och turkiska.</p>
-                <p>Vi tillhandahåller även digitala teoriböcker på arabiska, albanska, bosniska, engelska, finska, franska, kroatiska, persiska, turkiska, ryska, serbiska, somaliska, sorani, spanska, svenska, thailändska och tyska.</p>
+                <p>Våra pedagoger erbjuder undervisning på svenska, engelska, arabiska och spanska, både för körlektioner och teorilektioner.</p>
+                <p>För privat övningskörning med personbil krävs inte längre introduktionsutbildning från och med 1 augusti 2026. Handledaren måste fortfarande vara godkänd av Transportstyrelsen och eleven behöver körkortstillstånd. Vi hjälper gärna elev och handledare att planera körningen på svenska, engelska, arabiska och spanska.</p>
+                <p>Vi tillhandahåller även digitala teoriböcker på arabiska, albanska, bosniska, engelska, finska, franska, kroatiska, persiska, ryska, serbiska, somaliska, sorani, spanska, svenska, thailändska och tyska.</p>
                 <div className="school-info-tags" aria-label="Språk">
-                  {['Svenska', 'Engelska', 'Arabiska', 'Spanska', 'Turkiska'].map((language) => (
+                  {['Svenska', 'Engelska', 'Arabiska', 'Spanska'].map((language) => (
                     <span key={language}>{language}</span>
                   ))}
                 </div>

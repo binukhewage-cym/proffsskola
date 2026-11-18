@@ -62,7 +62,7 @@ export function metadata(title: string, description: string, path = ''): Metadat
   };
 }
 export const localBusiness = {
-  '@type': ['LocalBusiness', 'Organization'],
+  '@type': ['DrivingSchool', 'LocalBusiness'],
   '@id': `${business.url}/#school`,
   name: business.name,
   legalName: business.legalName,
@@ -98,7 +98,8 @@ export const localBusiness = {
       availableLanguage: business.languages,
     },
   ],
-  sameAs: business.socials.map((x) => x[1]),
+  hasMap: business.mapsPlace,
+  sameAs: [business.mapsPlace, ...business.socials.map((x) => x[1])],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
     '@id': `${business.url}/#offer-catalog`,
